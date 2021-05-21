@@ -52,8 +52,9 @@ function Search() {
 					return (
 						<div key={book.id} className="card mb-3">
 							<div className="row g-0">
-								<div className="col-md-4">
+								<div className="col-md-auto">
 									<img
+										className="m-3 img-fluid"
 										src={book.volumeInfo.imageLinks.thumbnail}
 										alt={book.volumeInfo.title}
 									/>
