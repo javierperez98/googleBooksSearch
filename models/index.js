@@ -1,4 +1,4 @@
 module.exports = {
-  connect: require("./connect"),
-  Book: require("./book"),
+	connect: require("./connect"),
+	Book: require("./book"),
 };
