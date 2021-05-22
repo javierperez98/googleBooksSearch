@@ -1,3 +1,6 @@
+import Button from "../Button";
+import { Link } from "react-router-dom";
+
 function BookRows({ array }) {
 	return array.map((book) => {
 		return (
@@ -9,6 +12,16 @@ function BookRows({ array }) {
 							src={book.volumeInfo.imageLinks.thumbnail}
 							alt={book.volumeInfo.title}
 						/>
+						<div className="mx-3">
+							<a
+								href={book.volumeInfo.infoLink}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Button text="View" classStyle="btn btn-primary ml-1" />
+							</a>
+							<Button text="Save" classStyle="btn btn-primary mx-1" onClick="/saved" />
+						</div>
 					</div>
 					<div className="col-md-8">
 						<div className="card-body">
