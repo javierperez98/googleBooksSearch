@@ -9,7 +9,6 @@ function Search() {
 		books: [],
 		search: "",
 	});
-
 	function handleInput(e) {
 		e.preventDefault();
 		const input = e.target.value;
@@ -18,7 +17,7 @@ function Search() {
 
 	async function findbooks(e) {
 		e.preventDefault();
-		const list = await API.getBooks(state.search.trim());
+		const list = await API.searchBooks(state.search.trim());
 		setState({ books: list.data.items, search: "" });
 	}
 
