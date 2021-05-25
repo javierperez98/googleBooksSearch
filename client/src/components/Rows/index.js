@@ -1,10 +1,10 @@
 import Container from "./Container";
 import Book from "./Book";
 
-function Rows({ array }) {
+function Rows({ array, handleSave }) {
 	return (
 		<Container>
-			<Book array={array} />
+			<Book array={array} handleSave={handleSave} />
 		</Container>
 	);
 }
