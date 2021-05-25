@@ -9,10 +9,26 @@ function Search() {
 		books: [],
 		search: "",
 	});
+
 	function handleInput(e) {
 		e.preventDefault();
 		const input = e.target.value;
 		setState({ ...state, search: input });
+	}
+
+	function handleSave(e) {
+		e.preventDefault();
+		console.log(e.target.value);
+		const arr = state.books[e.target.value];
+		const saveBook = {
+			title: arr.volumeInfo.title,
+			author: arr.volumeInfo.title,
+			link: arr.volumeInfo.title,
+			image: arr.volumeInfo.title,
+			description: arr.volumeInfo.title,
+			subtitle: arr.volumeInfo.title,
+		};
+		API.saveBook(saveBook);
 	}
 
 	async function findbooks(e) {
@@ -29,7 +45,7 @@ function Search() {
 				handleInput={handleInput}
 				findbooks={findbooks}
 			/>
-			<Rows array={state.books} />
+			<Rows array={state.books} handleSave={handleSave} />
 		</div>
 	);
 }
