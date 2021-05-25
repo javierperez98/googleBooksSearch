@@ -1,7 +1,7 @@
 import Button from "../Button";
-import { Link } from "react-router-dom";
+let i = 0;
 
-function BookRows({ array }) {
+function BookRows({ array, handleSave }) {
 	return array.map((book) => {
 		return (
 			<div key={book.id} className="card mb-3">
@@ -12,7 +12,7 @@ function BookRows({ array }) {
 							src={book.volumeInfo.imageLinks.thumbnail}
 							alt={book.volumeInfo.title}
 						/>
-						<div className="mx-3">
+						<div className="m-3">
 							<a
 								href={book.volumeInfo.infoLink}
 								target="_blank"
@@ -20,7 +20,12 @@ function BookRows({ array }) {
 							>
 								<Button text="View" classStyle="btn btn-primary ml-1" />
 							</a>
-							<Button text="Save" classStyle="btn btn-primary mx-1" onClick="/saved" />
+							<Button
+								text="Save"
+								classStyle="btn btn-primary mx-1"
+								handleBtn={handleSave}
+								id={i++}
+							/>
 						</div>
 					</div>
 					<div className="col-md-8">
